@@ -100,7 +100,7 @@ program
 
         console.log(chalk.green(`Starting a timer for ${minutes} minutes...`));
 
-        const purple = chalk.hex('#bc62f56');
+        const purple = chalk.hex('#bc62f5');
 
         
         const startTime = Date.now();
