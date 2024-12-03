@@ -2,6 +2,7 @@
 
 import { program } from 'commander';
 import chalk from 'chalk';
+import play from 'play-sound';
 
 const list = {
     0: `    █████   
@@ -140,6 +141,13 @@ program
         setTimeout(() => {
             clearInterval(interval);
             console.clear();
+
+            const player = play({});
+
+            player.play('/System/Library/Sounds/Glass.aiff', (err) => {
+                if (err) console.error(`Could not play sound: ${err}`);
+            });
+            
             console.log(chalk.blue('Time is up!'));
         }, minutes * 60 * 1000);
     })
